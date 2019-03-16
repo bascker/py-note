@@ -24,6 +24,24 @@
     1.4 元组常见方法:
         1) tuple(seq): 序列转成元组
 2、映射：如字典
+    2.1 字典 dict 是无序的
+    2.2 常用操作
+        1) len(dic): 返回字典 dic 中 key-value 的数量
+        2) key in dic: 是否存在键为 key 的匹配项
+        3) clear(): 清除原始字典所有项
+        4) copy(): 返回一个相同 key-value 的字典. ps: 浅拷贝
+        5) deepcopy(): 深度拷贝. from copy import deepcopy
+        6) fromkeys(): 给定 key 生成新字典
+        7) get(): 获取 key 对应的 value. 若 key 不存在，返回 None。ps: dict[key] 则抛出 KeyError.
+        8) has_key(): 是否存在某 key. 相当于 2.2.2
+        9) items(): 将字典项以列表方式返回, 每个项是 (key, value) 的形式
+        10) iteritems(): 返回迭代器. ps: 更高效
+        11) keys(): 返回 key 列表
+        12) iterkeys(): 返回 key 的迭代器
+        13) values(): 返回 value 列表
+        14) pop(): 获取给定 key 的值，并将该 key-value 移除
+        15) popitem(): 随意移除一对 key-value
+        16) update(): 利用一个字典更新另一个字典
 3、集合：set，既不是序列，也不是映射
 '''
 import logging as logger
