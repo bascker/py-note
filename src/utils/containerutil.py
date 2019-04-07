@@ -21,6 +21,7 @@
         11) sorted(): 列表排序，默认升序. ps: 返回副本
         12) list(seq): 序列转成列表
         13) cmp(x, y): 比较两个值
+        14) zip(): 将2个序列压缩在一起，返回一个新的元组列表。若序列不等长，则当达到最短序列长度时停止。
     1.4 元组常见方法:
         1) tuple(seq): 序列转成元组
 2、映射：如字典
@@ -33,7 +34,7 @@
         5) deepcopy(): 深度拷贝. from copy import deepcopy
         6) fromkeys(): 给定 key 生成新字典
         7) get(): 获取 key 对应的 value. 若 key 不存在，返回 None。ps: dict[key] 则抛出 KeyError.
-        8) has_key(): 是否存在某 key. 相当于 2.2.2
+        8) has_key(): 是否存在某 key. 相当于 2.2.2。note：python3 中弃用
         9) items(): 将字典项以列表方式返回, 每个项是 (key, value) 的形式
         10) iteritems(): 返回迭代器. ps: 更高效
         11) keys(): 返回 key 列表
@@ -42,6 +43,7 @@
         14) pop(): 获取给定 key 的值，并将该 key-value 移除
         15) popitem(): 随意移除一对 key-value
         16) update(): 利用一个字典更新另一个字典
+        17) enumerate(): 提供 index-value(索引-值)对,将可遍历对象(如列表、元组或字符串)组合为一个索引序列，列出数据和数据下标
 3、集合：set，既不是序列，也不是映射
 '''
 import logging as logger
@@ -157,5 +159,5 @@ def delete(li, index):
     del li[index]
 
 #################################
-#
+# 字典
 #################################
