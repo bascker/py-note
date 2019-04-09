@@ -1,31 +1,53 @@
 # -*- coding: utf-8 -*-
+'''
 
+'''
 import logging
+from logging import handlers
 
 
 class AppLogger:
+    '''
+    日志记录器，支持输出到控制台 & 文件
+    '''
 
-    def __init__(self, filepath):
-        # 获取log的一个实例:可以通过增加不同的handler来丰富log实例的特性
-        self.logger = logging.getLogger()
-        # 指定了Log的输出端是文件，通过传入文件路劲来指定输出文件
-        handler = logging.FileHandler(filepath)
-        # 指定了FileHandler的输出格式:format的关键字,例如asctime，levelname
-        formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
-        # 设置优先级：Logging模块定义了5种log信息的优先级
-        # 优先级关系：DEBUG < INFO < WARNING < ERROR < CRITCAL
-        self.logger.setLevel(logging.NOTSET)
+    __level = {
+        'debug': logging.DEBUG,
+        'info': logging.INFO,
+        'warning': logging.WARNING,
+        'error': logging.ERROR,
+        'critical': logging.CRITICAL
+    }
+
+    def __init__(self, name=None, level=None, filepath=None):
+        self.logger = logging.getLogger(name)
+        self.logger.setLevel(self.__level.get(level, logging.DEBUG))
+
+        if name is not None:
+            fmt = logging.Formatter(
+                '%(asctime)s %(threadName)s-%(thread)d %(name)s.%(funcName)s[line:%(lineno)d] %(levelname)s %(message)s')
+        else:
+            fmt = logging.Formatter(
+                '%(asctime)s %(threadName)s-%(thread)d %(filename)s.%(funcName)s[line:%(lineno)d] %(levelname)s %(message)s')
+        # 输出到控制台
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(fmt)
+        self.logger.addHandler(stream_handler)
+
+        if filepath is not None:
+            # 按天打包日志文件
+            file_handler = handlers.TimedRotatingFileHandler(filename=filepath, when='D', backupCount=3, encoding='utf-8')
+            file_handler.setFormatter(fmt)
+            self.logger.addHandler(file_handler)
 
     def debug(self, msg):
-        self.logger.debug(self, msg)
+        self.logger.debug(msg)
 
     def info(self, msg):
-        self.logger.info(self, msg)
+        self.logger.info(msg)
 
     def warn(self, msg):
-        self.logger.warning(self, msg)
+        self.logger.warning(msg)
 
     def error(self, msg):
-        self.logger.error(self, msg)
+        self.logger.error(msg)

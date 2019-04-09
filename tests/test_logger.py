@@ -3,5 +3,5 @@
 from src.utils.logger import AppLogger
 
 if __name__ == '__main__':
-    LOGGER = AppLogger("a.log")
-    LOGGER.info("aaa")
+    LOGGER = AppLogger(name='mylog', filepath='file/my.log')
+    LOGGER.debug("bbb")
