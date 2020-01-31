@@ -1,5 +1,5 @@
 # Python 项目结构
-Python 项目目录结构如下：
+Python 项目目录结构如下
 ```
 project_name
 |- bin              # 脚本等可执行文件，不限于shell脚本
