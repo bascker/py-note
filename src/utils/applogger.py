@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-
+日志
 '''
 import logging
 from logging import handlers
