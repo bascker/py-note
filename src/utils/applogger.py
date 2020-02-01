@@ -10,13 +10,18 @@ class AppLogger:
     '''
     日志记录器，支持输出到控制台 & 文件
     '''
+    DEBUG = 0
+    INFO = 1
+    WARN = 2
+    ERROR = 3
+    CRITICAL = 4
 
     __level = {
-        'debug': logging.DEBUG,
-        'info': logging.INFO,
-        'warning': logging.WARNING,
-        'error': logging.ERROR,
-        'critical': logging.CRITICAL
+        DEBUG: logging.DEBUG,
+        INFO: logging.INFO,
+        WARN: logging.WARNING,
+        ERROR: logging.ERROR,
+        CRITICAL: logging.CRITICAL
     }
 
     def __init__(self, name=None, level=None, filepath=None):

@@ -5,9 +5,18 @@
 生成器 generator
 @author bascker
 """
+import os
+import sys
+# 用于引入自定义模块: 若当前目录查不到，则 import 模块从 sys.path 找
+sys.path.append(os.getcwd())
+
+from src.utils.applogger import AppLogger
+
+LOG = AppLogger("generator")
 
 
 def main():
+
     febon = _febon(4)
     # 使用 next() 获取序列下一个元素
     assert 1 == next(febon)
@@ -18,7 +27,7 @@ def main():
         next(febon)
     except Exception as e:
         # 超出个数后，跑次 StopIteration 异常
-        print("StopIteration")
+        LOG.error("StopIteration")
 
 
 def _febon(n):
