@@ -1,0 +1,4 @@
+autopep8==1.5
+configparser==4.0.2
+pycodestyle==2.5.0
+virtualenv==16.7.9
