@@ -28,6 +28,7 @@ New python executable in d:\python\py-note\venv\Scripts\python.exe
 Installing setuptools, pip, wheel...
 done.
 ```
+会创建一个 venv 目录，其中包含了 python 解释器、标准库等目录。
 
 2、激活环境
 ```shell
