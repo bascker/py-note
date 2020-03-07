@@ -1,4 +1,10 @@
 autopep8==1.5
 configparser==4.0.2
+pbr==5.4.4
 pycodestyle==2.5.0
+six==1.14.0
+stevedore==1.31.0
 virtualenv==16.7.9
+virtualenv-clone==0.5.3
+virtualenvwrapper==4.8.4
+virtualenvwrapper-win==1.2.5

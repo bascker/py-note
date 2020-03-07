@@ -33,9 +33,17 @@ done.
 ```shell
 $ source venv/Scripts/activate
 (venv)
+
+# windows 下
+$ ./vemv/Scripts/activate.bat
 ```
 
-3、导出目前的依赖
+3、安装依赖: 安装当前项目需要的依赖
+```shell
+$ pip install xxx
+```
+
+4、导出目前的依赖
 ```shell
 # 查看依赖
 $ pip freeze
@@ -45,7 +53,7 @@ virtualenv==16.7.9
 $ pip freeze > requirements.txt
 ```
 
-4、退出环境
+5、退出环境
 ```shell
 $ deactivate
 ```

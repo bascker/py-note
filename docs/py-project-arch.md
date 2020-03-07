@@ -5,7 +5,7 @@ project_name
 |- bin              # 脚本等可执行文件，不限于shell脚本
 |- docs             # 存放文档
 |- examples         # 案例
-|- project_name     # 项目源码
+|- src              # 项目源码
    |-- __init__.py
    |-- main.py
 |- tests            # 单元测试代码
